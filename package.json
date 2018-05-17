@@ -1,0 +1,23 @@
+{
+  "name": "@cardash/config",
+  "version": "1.0.0",
+  "description": "Configuration management library, standardizes application storage and access",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd test && NODE_ENV=test node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cardash/config.git"
+  },
+  "keywords": [
+    "config",
+    "configuration"
+  ],
+  "author": "David Ellis <david@cardash.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cardash/config/issues"
+  },
+  "homepage": "https://github.com/cardash/config#readme"
+}
