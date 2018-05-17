@@ -1,5 +1,7 @@
 # @cardash/config
 
+[![CircleCI](https://circleci.com/gh/cardash/config.svg?style=svg&circle-token=08f5245c0844f58fdd8e431375b19305410264fa)](https://circleci.com/gh/cardash/config)
+
 Configuration management library, standardizes application storage and access.
 
 ## Install
