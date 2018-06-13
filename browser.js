@@ -14,31 +14,32 @@
  *    changes to the config object at runtime you also need to add change
  *    tracking and reporting to properly figure things out.
  */
-const fs = require('fs')
 
 // All files to be imported will come from the `config` directory in the
 // directory the application is run from
-const root = `${process.cwd()}/config`
+const root = `config`
 
 /* eslint-disable import/no-dynamic-require */
-const common = require(`${root}/common`)
-const config = fs.existsSync(`${root}/${process.env.NODE_ENV}.json`) ||
-  fs.existsSync(`${root}/${process.env.NODE_ENV}.js`) ? require(`${root}/${process.env.NODE_ENV}`) :
-  {}
-const secrets = fs.existsSync(`${root}/secrets.json`) || fs.existsSync(`${root}/secrets.js`) ?
-  require(`${root}/secrets`) : {}
-/* eslint-enable import/no-dynamic-require */
+import common from `config/common`
 
-const overrides = Object.entries(process.env).map((entry) => {
-  try {
-    return [entry[0], JSON.parse(entry[1])]
-  } catch (e) {
-    return entry
-  }
-}).reduce((accum, entry) => {
-  accum[entry[0]] = entry[1]
-  return accum
-}, {})
-
-Object.assign(module.exports, common, config, secrets, overrides)
-Object.freeze(module.exports)
+console.log(common)
+//const config = fs.existsSync(`${root}/${process.env.NODE_ENV}.json`) ||
+//  fs.existsSync(`${root}/${process.env.NODE_ENV}.js`) ? require(`${root}/${process.env.NODE_ENV}`) :
+//  {}
+//const secrets = fs.existsSync(`${root}/secrets.json`) || fs.existsSync(`${root}/secrets.js`) ?
+//  require(`${root}/secrets`) : {}
+///* eslint-enable import/no-dynamic-require */
+//
+//const overrides = Object.entries(process.env).map((entry) => {
+//  try {
+//    return [entry[0], JSON.parse(entry[1])]
+//  } catch (e) {
+//    return entry
+//  }
+//}).reduce((accum, entry) => {
+//  accum[entry[0]] = entry[1]
+//  return accum
+//}, {})
+//
+//Object.assign(module.exports, common, config, secrets, overrides)
+//Object.freeze(module.exports)
