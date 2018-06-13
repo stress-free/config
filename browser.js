@@ -15,19 +15,28 @@
  *    tracking and reporting to properly figure things out.
  */
 
-// All files to be imported will come from the `config` directory in the
-// directory the application is run from
-const root = `config`
-
 /* eslint-disable import/no-dynamic-require */
 import common from 'Config/common.js'
 
-console.log(common)
-//const config = fs.existsSync(`${root}/${process.env.NODE_ENV}.json`) ||
-//  fs.existsSync(`${root}/${process.env.NODE_ENV}.js`) ? require(`${root}/${process.env.NODE_ENV}`) :
-//  {}
-//const secrets = fs.existsSync(`${root}/secrets.json`) || fs.existsSync(`${root}/secrets.js`) ?
-//  require(`${root}/secrets`) : {}
+console.log('common', common)
+
+const load_env_config = async (env) => {
+  const config_path = `Config/${env}`
+  let env_config
+  try {
+    env_config = await import(config_path)
+  } catch {
+    env_config = {}
+  }
+  return env_config
+}
+
+const env_config = load_env_config(process.env.NODE_ENV)
+
+console.log('env', env_config)
+
+const secrets = fs.existsSync(`${root}/secrets.json`) || fs.existsSync(`${root}/secrets.js`) ?
+  require(`${root}/secrets`) : {}
 ///* eslint-enable import/no-dynamic-require */
 //
 //const overrides = Object.entries(process.env).map((entry) => {
