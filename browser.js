@@ -15,40 +15,8 @@
  *    tracking and reporting to properly figure things out.
  */
 
-/* eslint-disable import/no-dynamic-require */
-import common from 'Config/common.js'
+import Config from 'Config'
 
-console.log('common', common)
+const merged = Object.assign({}, Config.common, Config[process.env.NODE_ENV] || {}, Config.secrets || {})
 
-const load_env_config = async (env) => {
-  const config_path = `Config/${env}`
-  let env_config
-  try {
-    env_config = await import(config_path)
-  } catch {
-    env_config = {}
-  }
-  return env_config
-}
-
-const env_config = load_env_config(process.env.NODE_ENV)
-
-console.log('env', env_config)
-
-const secrets = fs.existsSync(`${root}/secrets.json`) || fs.existsSync(`${root}/secrets.js`) ?
-  require(`${root}/secrets`) : {}
-///* eslint-enable import/no-dynamic-require */
-//
-//const overrides = Object.entries(process.env).map((entry) => {
-//  try {
-//    return [entry[0], JSON.parse(entry[1])]
-//  } catch (e) {
-//    return entry
-//  }
-//}).reduce((accum, entry) => {
-//  accum[entry[0]] = entry[1]
-//  return accum
-//}, {})
-//
-//Object.assign(module.exports, common, config, secrets, overrides)
-//Object.freeze(module.exports)
+export default Object.freeze(merged)
