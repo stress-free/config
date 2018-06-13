@@ -16,7 +16,7 @@
  */
 const fs = require('fs')
 
-// All files to be imported will come from the `config` directory in the 
+// All files to be imported will come from the `config` directory in the
 // directory the application is run from
 const root = `${process.cwd()}/config`
 

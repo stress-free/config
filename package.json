@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Configuration management library, standardizes application storage and access",
   "main": "index.js",
+  "browser": {
+    "./index.js": "./browser.js"
+  },
   "scripts": {
     "test": "cd test && NODE_ENV=test node test.js"
   },
