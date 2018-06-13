@@ -15,8 +15,8 @@
  *    tracking and reporting to properly figure things out.
  */
 
-import Config from 'Config'
+import config from 'Config'
 
-const merged = Object.assign({}, Config.common, Config[process.env.NODE_ENV] || {}, Config.secrets || {})
+const merged = Object.assign({}, config.common, config[process.env.NODE_ENV] || {}, config.secrets || {})
 
 export default Object.freeze(merged)
