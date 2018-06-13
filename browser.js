@@ -20,7 +20,7 @@
 const root = `config`
 
 /* eslint-disable import/no-dynamic-require */
-import common from `config/common`
+import common from 'Config/common.js'
 
 console.log(common)
 //const config = fs.existsSync(`${root}/${process.env.NODE_ENV}.json`) ||
