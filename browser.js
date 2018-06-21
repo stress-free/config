@@ -15,7 +15,12 @@
  *    tracking and reporting to properly figure things out.
  */
 
-import config from 'Config'
+/*
+ *  this is safe only because this package is intended to be installed
+ *  directly by the service that's going to use it
+ */
+
+import config from '../../../config'
 
 const merged = Object.assign({}, config.common, config[process.env.NODE_ENV] || {}, config.secrets || {})
 
