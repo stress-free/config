@@ -15,7 +15,7 @@
  *    tracking and reporting to properly figure things out.
  */
 
-import config from '../../config'
+import config from '../../../config'
 
 const merged = Object.assign({}, config.common, config[process.env.NODE_ENV] || {}, config.secrets || {})
 
