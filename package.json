@@ -1,13 +1,14 @@
 {
   "name": "@cardash/config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Configuration management library, standardizes application storage and access",
   "main": "index.js",
   "browser": {
     "./index.js": "./browser.js"
   },
   "scripts": {
-    "test": "cd test && NODE_ENV=test node test.js"
+    "test": "cd test && NODE_ENV=test nyc node test.js",
+    "coverage": "COVERALLS_SERVICE_NAME=circleci nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/cardash/config/issues"
   },
-  "homepage": "https://github.com/cardash/config#readme"
+  "homepage": "https://github.com/cardash/config#readme",
+  "devDependencies": {
+    "coveralls": "^3.0.1",
+    "nyc": "^12.0.2"
+  }
 }
