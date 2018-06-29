@@ -7,7 +7,10 @@
     "./index.js": "./browser.js"
   },
   "scripts": {
-    "test": "cd test && NODE_ENV=test nyc node test.js",
+    "test": "npm run testEverything && npm run testWithoutSecrets && npm run testWithoutEnv",
+    "testEverything": "cd test/witheverything && NODE_ENV=test nyc node test.js",
+    "testWithoutSecrets": "cd test/withoutsecrets && NODE_ENV=test nyc --clean false node test.js",
+    "testWithoutEnv": "cd test/withoutenv && NODE_ENV=test nyc --clean false node test.js",
     "coverage": "COVERALLS_SERVICE_NAME=circleci nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
