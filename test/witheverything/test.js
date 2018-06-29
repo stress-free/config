@@ -1,5 +1,5 @@
 const assert = require('assert')
-const config = require('..') // Normally `require('@cardash/config')`
+const config = require('../..') // Normally `require('@cardash/config')`
 
 /* eslint-disable no-console */
 console.log('Testing basic config')
