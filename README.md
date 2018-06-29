@@ -22,7 +22,7 @@ Next create configuration files for each of your environments (e.g. `test.json`,
 
 Finally, you may optionally have a `secrets.{js|json}` file for secrets. This file should NOT be committed to the codebase, and instead injected during the build process from some secure vault system.
 
-For front end projects, inside your `config` folder you must include an `index.js` file that exports all the configuration files as a default export. (This is provided for you in the `hello-react-frontend` template)
+For front end projects, inside your `config` folder you must include an `index.js` file that exports all the configuration files as a default export.
 
 ```js
 import common from './common'
