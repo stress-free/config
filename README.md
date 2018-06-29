@@ -7,10 +7,8 @@ Configuration management library, standardizes application storage and access.
 ## Install
 
 ```sh
-npm install --save git+ssh://git@github.com:cardash/config
+npm install --save @cardash/config
 ```
-
-(Hopefully in the future this will be published and the install will be simpler)
 
 ## Usage
 
