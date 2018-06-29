@@ -1,6 +1,6 @@
 {
   "name": "@cardash/config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Configuration management library, standardizes application storage and access",
   "main": "index.js",
   "browser": {
