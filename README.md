@@ -1,6 +1,6 @@
 # @cardash/config
 
-[![CircleCI](https://circleci.com/gh/cardash/config.svg?style=svg&circle-token=08f5245c0844f58fdd8e431375b19305410264fa)](https://circleci.com/gh/cardash/config)
+[![CircleCI](https://circleci.com/gh/cardash/config.svg?style=svg&circle-token=08f5245c0844f58fdd8e431375b19305410264fa)](https://circleci.com/gh/cardash/config) [![Coverage Status](https://coveralls.io/repos/github/cardash/config/badge.svg?branch=master)](https://coveralls.io/github/cardash/config?branch=master)
 
 Configuration management library, standardizes application storage and access.
 
@@ -24,7 +24,7 @@ Finally, you may optionally have a `secrets.{js|json}` file for secrets. This fi
 
 For front end projects, inside your `config` folder you must include an `index.js` file that exports all the configuration files as a default export. (This is provided for you in the `hello-react-frontend` template)
 
-```
+```js
 import common from './common'
 import development from './local'
 import production from './production'
