@@ -22,6 +22,6 @@
 
 import config from '../../../config'
 
-const merged = Object.assign({}, config.common, config[process.env.NODE_ENV] || {}, config.secrets || {})
+const merged = Object.assign({}, config.common, config[process.env.NODE_ENV] || {})
 
 export default Object.freeze(merged)
