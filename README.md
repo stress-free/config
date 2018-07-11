@@ -20,7 +20,7 @@ All `config` directories *MUST* have a `common.{js|json}` file to house configur
 
 Next create configuration files for each of your environments (e.g. `test.json`, `development.json`, `staging.js`, `production.json`, etc). It is recommended that these files be JSON files and only house the configurations that will be changed versus what is in `common`. If your `NODE_ENV` doesn't match any file in here, it will be skipped entirely and fall back to the `common` configuration.
 
-Finally, you may optionally have a `secrets.{js|json}` file for secrets. This file should NOT be committed to the codebase, and instead injected during the build process from some secure vault system.
+Finally, you may optionally have a `secrets.{js|json}` file for secrets. This file should NOT be committed to the codebase, and instead injected during the build process from some secure vault system. `secrets.{js|json}` files are not supported in the browser version of the `config` library. API keys needed in front end code should be carefully considered and added to `common` or env specific config.
 
 For front end projects, inside your `config` folder you must include an `index.js` file that exports all the configuration files as a default export.
 
