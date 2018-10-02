@@ -22,6 +22,7 @@
 
 import config from '../../../config'
 
+// Use the `var` keyword since IE 10 does not support the `const` keyword
 var merged = Object.assign({}, config.common, config[process.env.NODE_ENV] || {})
 
 export default Object.freeze(merged)
