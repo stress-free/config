@@ -20,10 +20,15 @@ const fs = require('fs')
 // directory the application is run from
 const root = `${process.cwd()}/config`
 
+// The React community likes to hardwire library behavior on NODE_ENV, so
+// adding a CARDASH_ENV that can configure our applications independently
+// of how the React code is configured.
+const env = process.env.CARDASH_ENV || process.env.NODE_ENV
+
 /* eslint-disable import/no-dynamic-require */
 const common = require(`${root}/common`)
-const config = fs.existsSync(`${root}/${process.env.NODE_ENV}.json`) ||
-  fs.existsSync(`${root}/${process.env.NODE_ENV}.js`) ? require(`${root}/${process.env.NODE_ENV}`) :
+const config = fs.existsSync(`${root}/${env}.json`) ||
+  fs.existsSync(`${root}/${env}.js`) ? require(`${root}/${env}`) :
   {}
 const secrets = fs.existsSync(`${root}/secrets.json`) || fs.existsSync(`${root}/secrets.js`) ?
   require(`${root}/secrets`) : {}
