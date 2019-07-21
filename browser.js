@@ -25,7 +25,7 @@ import config from '../../../config'
 // The React community likes to hardwire library behavior on NODE_ENV, so
 // adding a CARDASH_ENV that can configure our applications independently
 // of how the React code is configured.
-const env = process.env.CARDASH_ENV || process.env.NODE_ENV
+const env = process.env.CARDASH_ENV || process.env.NODE_ENV || process.env.ENV
 
 // Use the `var` keyword since IE 10 does not support the `const` keyword
 var merged = Object.assign({}, config.common, config[env] || {})
