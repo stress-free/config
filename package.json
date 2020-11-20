@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/cardash/config.git"
+    "url": "git+ssh://git@github.com/stress-free/config.git"
   },
   "keywords": [
     "config",
@@ -24,9 +24,9 @@
   "author": "David Ellis <david@cardash.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cardash/config/issues"
+    "url": "https://github.com/stress-free/config/issues"
   },
-  "homepage": "https://github.com/cardash/config#readme",
+  "homepage": "https://github.com/stress-free/config#readme",
   "devDependencies": {
     "coveralls": "^3.0.1",
     "nyc": "^12.0.2"
